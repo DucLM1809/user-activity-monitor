@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "User Activity Monitor",
+  "version": "1.0",
+  "description": "Monitors user activity on a website and changes status to offline if inactive.",
+  "permissions": ["storage", "activeTab", "scripting", "runtime"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "./kpi.png",
+      "48": "./kpi.png",
+      "128": "./kpi.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"]
+}
