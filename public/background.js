@@ -1,12 +1,9 @@
-// Monitor user activity on tab activation
-
 chrome.tabs.onActivated.addListener((activeInfo) => {
-  // Listen for mouse and keyboard events
   chrome.scripting.executeScript({
     target: { tabId: activeInfo.tabId },
     func: () => {
       let activityTimeout
-      const inactivityPeriod = 10 * 1000 // 30 seconds
+      const inactivityPeriod = 10 * 1000
       function resetInactivityTimeout() {
         clearTimeout(activityTimeout)
         setStatus('online')
